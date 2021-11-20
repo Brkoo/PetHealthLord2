@@ -1,10 +1,10 @@
 # upora-2021-22-my-second-app-Brkoo
 upora-2021-22-my-second-app-Brkoo created by GitHub Classroom
-&nbsp;PetHealthLord
+
+<b>Pet Health Lord</b>
 
 
-<a href="https://play.google.com/store/apps/details?id=com.health.openscale.pro" target="_blank">
-<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" alt="Get it on Google Play" height="80"/></a>
+<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" alt="Get it on Google Play" height="80"/>
 
 
 # Summary :clipboard:
