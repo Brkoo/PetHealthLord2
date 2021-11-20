@@ -1,7 +1,7 @@
 # upora-2021-22-my-second-app-Brkoo
 upora-2021-22-my-second-app-Brkoo created by GitHub Classroom
 
-<b>Pet Health Lord</b>
+# <b>Pet Health Lord</b>
 
 
 <img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" alt="Get it on Google Play" height="80"/>
