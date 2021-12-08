@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "PetHealthLord"
 include ':app'
+include ':MyLib'
