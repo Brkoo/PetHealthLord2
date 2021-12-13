@@ -33,7 +33,7 @@
         app:backgroundTint="@color/darkSkin"
         app:elevation="5dp"
         app:layout_anchor="@id/bottomAppBar"
-        />
+        android:contentDescription="@string/add_button" />
 
     <fragment
 

@@ -11,4 +11,18 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name">Name</string>
+    <string name="add_button">Add Button</string>
+    <string name="date">Date</string>
+    <string name="weight">Weight</string>
+    <string name="name_of_your_pet">Name of your pet</string>
+    <string name="birth_date_of_your_pet">Birth Date of your pet</string>
+    <string name="weight_of_your_pet">Weight of your pet</string>
+    <string name="age_of_your_pet">Age of your pet</string>
+    <string name="proofile_image_of_pet">Proofile image of pet</string>
+    <string name="scale_image">Scale image</string>
+    <string name="kg">KG</string>
+    <string name="next_dose">Next dose:</string>
+    <string name="dose">dose</string>
+    <string name="your_pet_companion">Your pet companion</string>
 </resources>

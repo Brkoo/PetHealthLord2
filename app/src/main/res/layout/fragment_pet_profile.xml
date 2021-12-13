@@ -36,16 +36,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
 
-                app:srcCompat="@drawable/ic_batman" />
+                app:srcCompat="@drawable/ic_batman"
+                android:contentDescription="@string/proofile_image_of_pet" />
 
             <TextView
                 android:id="@+id/tvPetName"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:fontFamily="@font/baloo_thambi"
-                android:text="Name"
+                android:text="@string/name"
                 android:textAlignment="center"
-                android:textSize="30dp" />
+                android:textSize="30sp" />
 
             <LinearLayout
 
@@ -83,7 +84,8 @@
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@drawable/ic_scale" />
+                            app:srcCompat="@drawable/ic_scale"
+                            android:contentDescription="@string/scale_image" />
 
                         <TextView
                             android:id="@+id/textView6"
@@ -92,9 +94,9 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="5dp"
                             android:fontFamily="@font/baloo_thambi"
-                            android:text="Weight"
+                            android:text="@string/weight"
                             android:textAlignment="center"
-                            android:textSize="18dp"
+                            android:textSize="18sp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toEndOf="@+id/imageView2"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -104,7 +106,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="5dp"
-                            android:text="weight"
+                            android:text="@string/weight"
                             android:textSize="20sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -117,7 +119,7 @@
                             android:layout_height="16dp"
                             android:layout_marginStart="5dp"
                             android:layout_marginBottom="2dp"
-                            android:text="KG"
+                            android:text="@string/kg"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toEndOf="@+id/weight"
                             app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -155,7 +157,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:fontFamily="@font/baloo_thambi"
-                            android:text="Next dose:"
+                            android:text="@string/next_dose"
                             android:textAlignment="center"
                             android:textSize="18dp"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -166,7 +168,7 @@
                             android:id="@+id/vaccineDose"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="dose"
+                            android:text="@string/dose"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toEndOf="@+id/imageViewScale"

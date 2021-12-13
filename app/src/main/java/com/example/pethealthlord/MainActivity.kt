@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         //fragmentManager(WelcomeFragment())
         val navController = findNavController(R.id.fragmentContainerView)
 
-        binding.fab.setOnClickListener(){
+        fab.setOnClickListener(){
             navController.navigateUp()
             navController.navigate(R.id.action_welcomeFragment_to_addElementsFragment)
         }

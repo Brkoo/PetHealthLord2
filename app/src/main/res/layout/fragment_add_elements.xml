@@ -60,7 +60,7 @@
 
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:hint="Name"
+        android:hint="@string/name"
         android:textColorHint="@color/white"
         app:boxStrokeColor="@color/navyBlue"
         app:hintTextColor="@color/navyBlue"
@@ -107,7 +107,7 @@
             android:layout_width="match_parent"
 
             android:layout_height="wrap_content"
-            android:hint="Date"
+            android:hint="@string/date"
             android:textColorHint="@color/white"
             app:boxStrokeColor="@color/navyBlue"
             app:hintTextColor="@color/navyBlue"
@@ -137,7 +137,7 @@
 
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
-        android:hint="Weight"
+        android:hint="@string/weight"
         android:textColorHint="@color/white"
         app:boxStrokeColor="@color/navyBlue"
         app:hintTextColor="@color/navyBlue"
@@ -164,7 +164,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:fontFamily="@font/baloo_thambi"
-        android:text="Name of your pet"
+        android:text="@string/name_of_your_pet"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -174,7 +174,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:fontFamily="@font/baloo_thambi"
-        android:text="Birth Date of your pet"
+        android:text="@string/birth_date_of_your_pet"
         app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -184,7 +184,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:fontFamily="@font/baloo_thambi"
-        android:text="Weight of your pet"
+        android:text="@string/weight_of_your_pet"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout3"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -241,7 +241,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/baloo_thambi"
-        android:text="Age of your pet"
+        android:text="@string/age_of_your_pet"
         app:layout_constraintBottom_toTopOf="@+id/textboxAge"
         app:layout_constraintStart_toStartOf="parent" />
 

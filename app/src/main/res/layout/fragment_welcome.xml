@@ -30,7 +30,7 @@
         android:layout_marginTop="10dp"
         android:fontFamily="@font/baloo_thambi"
         android:textSize="20dp"
-        android:text="Your pet companion"
+        android:text="@string/your_pet_companion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
