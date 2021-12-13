@@ -104,6 +104,7 @@ class PetProfileFragment : Fragment(R.layout.fragment_pet_profile) {
 
             with(builder){
                 setTitle("Change your pets Weight")
+                editText.setText("Weight")
                 setPositiveButton("OK"){dialog, which ->
                     app.data.AllPets[position].Weight = editText.text.toString().toInt()
                     app.saveToFile()
