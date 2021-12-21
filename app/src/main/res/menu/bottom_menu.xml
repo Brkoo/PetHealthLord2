@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+ <item
+     android:id="@+id/welcomeFragment"
+     android:icon="@drawable/home_picture"
+     android:title="Home"/>
+ <item
+  android:id="@+id/Maps"
+  android:icon="@drawable/ic_baseline_place_24"
+  android:title="Places"
+  />
+
+
+ <item
+     android:icon="@drawable/ic_add_24dp"
+     android:id="@+id/addElementsFragment"
+     android:title="Add"/>
+
+ <item
+     android:icon="@drawable/ic_baseline_web_24"
+     android:id="@+id/News"
+     android:title="News"/>
+
+
+
+
+
+ <item
+     android:icon="@drawable/settings_picture"
+     android:id="@+id/Settings"
+     android:title="Settings"/>
+
+
+</menu>

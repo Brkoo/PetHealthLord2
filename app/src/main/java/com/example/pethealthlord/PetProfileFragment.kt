@@ -29,13 +29,9 @@ private const val ARG_PARAM2 = "param2"
  */
 class PetProfileFragment : Fragment(R.layout.fragment_pet_profile) {
 
-    lateinit var app : MyApplication
+    lateinit var app: MyApplication
     lateinit var pet: Pet
     val gson = Gson()
-
-
-
-
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -56,35 +52,27 @@ class PetProfileFragment : Fragment(R.layout.fragment_pet_profile) {
         weight.text = pet.Weight.toString()
 
 
-
-
-
-
-
-
-
-
-
     }
 
     private fun showEditTextDialog(position: Int) {
-        tvPetName.setOnClickListener{
+        tvPetName.setOnClickListener {
 
             val builder = AlertDialog.Builder(this.context)
             val inflater = layoutInflater
             val dialogLayout = inflater.inflate(R.layout.edit_text_layout, null)
             val editText = dialogLayout.findViewById<EditText>(R.id.ETName)
 
-            with(builder){
+            with(builder) {
                 setTitle("Change your pets Name")
-                setPositiveButton("OK"){dialog, which ->
+                setPositiveButton("OK") { dialog, which ->
                     app.data.AllPets[position].Name = editText.text.toString()
                     app.saveToFile()
-                    view?.findNavController()?.navigate(R.id.action_petProfileFragment_self, Bundle().apply{
-                        putInt("pet", position)
-                    })
+                    view?.findNavController()
+                        ?.navigate(R.id.action_petProfileFragment_self, Bundle().apply {
+                            putInt("pet", position)
+                        })
                 }
-                setNegativeButton("Cancel"){dialog, which ->
+                setNegativeButton("Cancel") { dialog, which ->
                     Log.d("Main", "negative button clicked")
                 }
                 setView(dialogLayout)
@@ -92,27 +80,26 @@ class PetProfileFragment : Fragment(R.layout.fragment_pet_profile) {
             }
 
 
-
-
         }
-        weightCard.setOnClickListener{
+        weightCard.setOnClickListener {
 
             val builder = AlertDialog.Builder(this.context)
             val inflater = layoutInflater
             val dialogLayout = inflater.inflate(R.layout.edit_text_layout, null)
             val editText = dialogLayout.findViewById<EditText>(R.id.ETName)
 
-            with(builder){
+            with(builder) {
                 setTitle("Change your pets Weight")
                 editText.setText("Weight")
-                setPositiveButton("OK"){dialog, which ->
+                setPositiveButton("OK") { dialog, which ->
                     app.data.AllPets[position].Weight = editText.text.toString().toInt()
                     app.saveToFile()
-                    view?.findNavController()?.navigate(R.id.action_petProfileFragment_self, Bundle().apply{
-                        putInt("pet", position)
-                    })
+                    view?.findNavController()
+                        ?.navigate(R.id.action_petProfileFragment_self, Bundle().apply {
+                            putInt("pet", position)
+                        })
                 }
-                setNegativeButton("Cancel"){dialog, which ->
+                setNegativeButton("Cancel") { dialog, which ->
                     Log.d("Main", "negative button clicked")
                 }
                 setView(dialogLayout)
@@ -120,12 +107,10 @@ class PetProfileFragment : Fragment(R.layout.fragment_pet_profile) {
             }
 
 
-
-
         }
 
 
-        }
+    }
 
 
 }

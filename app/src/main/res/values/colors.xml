@@ -13,6 +13,7 @@
     <color name="skin">#d2c8bc</color>
     <color name="darkSkin">#ba9a88</color>
     <color name="brown">#ac7e62</color>
+    <color name="red_transparent">#CBFF0000</color>
 
 
 </resources>

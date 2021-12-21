@@ -30,15 +30,27 @@
             android:padding="12dp"
             app:layout_constraintStart_toStartOf="parent">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:src="@drawable/ic_baseline_delete_red_24"
+                app:backgroundTint="@color/navyBlue"
+                app:fabSize="mini" />
 
             <ImageView
                 android:id="@+id/imageViewFragment"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
+                android:layout_marginEnd="50dp"
 
                 app:srcCompat="@drawable/ic_batman"
                 android:contentDescription="@string/proofile_image_of_pet" />
-
+        </LinearLayout>
             <TextView
                 android:id="@+id/tvPetName"
                 android:layout_width="match_parent"

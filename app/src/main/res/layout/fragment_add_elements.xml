@@ -18,26 +18,6 @@
     tools:context=".AddElementsFragment"
     android:padding="2dp">
 
-    <Button
-        android:id="@+id/exit"
-        style="@style/Widget.MaterialComponents.Button.Icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:shadowColor="#A8A8A8"
-        android:shadowDx="0"
-        android:shadowDy="0"
-        android:shadowRadius="0"
-        app:backgroundTint="@color/navyBlue"
-        app:icon="@drawable/back_arrow"
-        app:iconGravity="end"
-        app:iconSize="40dp"
-        app:iconTint="@color/whiteBlue"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSize"
@@ -47,7 +27,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/exit"
+        app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/item_breed_layout" />
 
 
@@ -163,6 +143,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="50dp"
         android:fontFamily="@font/baloo_thambi"
         android:text="@string/name_of_your_pet"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout"

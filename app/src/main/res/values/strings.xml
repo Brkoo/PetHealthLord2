@@ -25,4 +25,6 @@
     <string name="next_dose">Next dose:</string>
     <string name="dose">dose</string>
     <string name="your_pet_companion">Your pet companion</string>
+    <string name="open" />
+    <string name="close" />
 </resources>

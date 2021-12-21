@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.annotation.RequiresApi
+import androidx.fragment.app.commit
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mylib.AllPets
@@ -41,29 +42,30 @@ class WelcomeFragment : Fragment(R.layout.fragment_welcome) {
     val gson = Gson()
 
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         app = (activity?.application as MyApplication)
         val data = gson.fromJson(FileUtils.readFileToString(app.file), AllPets::class.java)
 
 
-
-
         //val petsList: ArrayList<Pet> = ArrayList()
 
-        profileRV.layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.HORIZONTAL, false)
-        profileRV.adapter = ProfileRVAdapter(data/*, petsList*/, object: ProfileRVAdapter.MyOnClick{
-            override fun onClick(p0: View?, position: Int){
+        profileRV.layoutManager =
+            LinearLayoutManager(this.context, LinearLayoutManager.HORIZONTAL, false)
+        profileRV.adapter =
+            ProfileRVAdapter(data/*, petsList*/, object : ProfileRVAdapter.MyOnClick {
+                override fun onClick(p0: View?, position: Int) {
 
-                app.savePosition(position)
+                    app.savePosition(position)
 
-               //val action = WelcomeFragmentDirections.actionWelcomeFragmentToPetProfileFragment(position)
-                view.findNavController().navigate(R.id.welcome_to_profile, Bundle().apply{
-                    putInt("pet", position)
-                })
-            }
-        })
+                    //val action = WelcomeFragmentDirections.actionWelcomeFragmentToPetProfileFragment(position)
+
+
+                    view.findNavController().navigate(R.id.welcome_to_profile, Bundle().apply {
+                        putInt("pet", position)
+                    })
+                }
+            })
 
     }
 

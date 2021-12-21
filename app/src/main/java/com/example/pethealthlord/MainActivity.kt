@@ -10,9 +10,13 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
+import androidx.fragment.app.commit
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.FragmentNavigator
+import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mylib.Pet
 import com.example.pethealthlord.databinding.ActivityMainBinding
@@ -20,6 +24,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var toggle: ActionBarDrawerToggle
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
     private lateinit var newRecyclerView: RecyclerView
@@ -35,40 +40,38 @@ class MainActivity : AppCompatActivity() {
         //fragmentManager(WelcomeFragment())
         val navController = findNavController(R.id.fragmentContainerView)
 
-        fab.setOnClickListener(){
-            navController.navigateUp()
-            navController.navigate(R.id.action_welcomeFragment_to_addElementsFragment)
-        }
 
-            bottomAppBar.setOnMenuItemClickListener{
-                val position = app.getPosition()
-                when(it.itemId){
-                    R.id.DeleteItem ->{
-                        deletedPet = app.data.AllPets.get(position)
-                        app.data.AllPets.removeAt(position)
+        BottomNavMenu.setupWithNavController(navController)
+
+            /*
+        bottomAppBar.setOnMenuItemClickListener {
+            val position = app.getPosition()
+            when (it.itemId) {
+                R.id.DeleteItem -> {
+                    deletedPet = app.data.AllPets.get(position)
+                    app.data.AllPets.removeAt(position)
+                    app.saveToFile()
+                    //navController.navigateUp()
+
+                    /*Snackbar.make(newRecyclerView, "${deletedPet.Name} is deleted", Snackbar.LENGTH_LONG).setAction("Undo", View.OnClickListener {
+                        app.data.AllPets.add(deletedPet)
                         app.saveToFile()
-                        //navController.navigateUp()
-
-                        /*Snackbar.make(newRecyclerView, "${deletedPet.Name} is deleted", Snackbar.LENGTH_LONG).setAction("Undo", View.OnClickListener {
-                            app.data.AllPets.add(deletedPet)
-                            app.saveToFile()
 
 
-                        }).show()*/
-                        navController.navigate(R.id.action_petProfileFragment_to_welcomeFragment)
-                    }
-
-
+                    }).show()*/
+                    navController.navigate(R.id.action_petProfileFragment_to_welcomeFragment)
                 }
-                true
+
+
             }
+            true
+        }
+        */
 
 
         }
 
 
 
-
-    }
-
+}
 

@@ -49,7 +49,7 @@ class AddElementsFragment : Fragment(R.layout.fragment_add_elements) {
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-       // app = application as MyApplication
+        // app = application as MyApplication
         app = (activity?.application as MyApplication)
         super.onViewCreated(view, savedInstanceState)
         var smallPet = PetSize(1, "Small", "Small pet")
@@ -58,21 +58,15 @@ class AddElementsFragment : Fragment(R.layout.fragment_add_elements) {
         var largePet = PetSize(4, "Large", "Large sized pet")
 
 
-
-
-
-
-
-
-
-
         val sizeList: ArrayList<PetSize> = ArrayList()
 
 
 
-        exit.setOnClickListener(){
+       /* exit.setOnClickListener() {
             view.findNavController().navigate(R.id.action_addElementsFragment_to_welcomeFragment)
         }
+        */
+
 
 
         //izbiranje datuma rojstva
@@ -85,21 +79,34 @@ class AddElementsFragment : Fragment(R.layout.fragment_add_elements) {
             updateLabel(myCalendar)
 
         }
-        callendarImage.setOnClickListener{
-            this.context?.let { it1 -> DatePickerDialog(it1, datePicker, myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH)).show() }
-            val age: Int = getAge(myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH))
+        callendarImage.setOnClickListener {
+            this.context?.let { it1 ->
+                DatePickerDialog(
+                    it1,
+                    datePicker,
+                    myCalendar.get(Calendar.YEAR),
+                    myCalendar.get(Calendar.MONTH),
+                    myCalendar.get(Calendar.DAY_OF_MONTH)
+                ).show()
+            }
+            val age: Int = getAge(
+                myCalendar.get(Calendar.YEAR),
+                myCalendar.get(Calendar.MONTH),
+                myCalendar.get(Calendar.DAY_OF_MONTH)
+            )
         }
 
-        rvSize.layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.HORIZONTAL, false)
+        rvSize.layoutManager =
+            LinearLayoutManager(this.context, LinearLayoutManager.HORIZONTAL, false)
 
 
 
 
 
-            sizeList.add(smallPet)
-            sizeList.add(mediumPet)
-            sizeList.add(mediumLargePet)
-            sizeList.add(largePet)
+        sizeList.add(smallPet)
+        sizeList.add(mediumPet)
+        sizeList.add(mediumLargePet)
+        sizeList.add(largePet)
 
 
 
@@ -108,17 +115,19 @@ class AddElementsFragment : Fragment(R.layout.fragment_add_elements) {
 
         editTextAge.text
 
-        AddPetButton.setOnClickListener{
-            app.data.AllPets.add(Pet(editTextTextPersonName.text.toString(),
-                editTextAge.text.toString().toInt(),
-                editTextWeight.text.toString().toInt()
-                ))
+        AddPetButton.setOnClickListener {
+            app.data.AllPets.add(
+                Pet(
+                    editTextTextPersonName.text.toString(),
+                    editTextAge.text.toString().toInt(),
+                    editTextWeight.text.toString().toInt()
+                )
+            )
             app.saveToFile()
             view.findNavController().navigate(R.id.action_addElementsFragment_to_welcomeFragment)
         }
 
     }
-
 
 
     private fun updateLabel(myCalendar: Calendar) {
