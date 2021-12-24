@@ -1,6 +1,7 @@
 package com.example.pethealthlord
 
 import android.Manifest
+import android.content.ContentValues.TAG
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Build
@@ -8,6 +9,7 @@ import androidx.fragment.app.Fragment
 
 import android.os.Bundle
 import android.os.Looper
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,6 +24,20 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import androidx.core.app.ActivityCompat.requestPermissions
+import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.mylib.AllLocations
+import com.example.mylib.AllPets
+import com.google.gson.Gson
+import kotlinx.android.synthetic.main.fragment_maps.*
+import kotlinx.android.synthetic.main.fragment_welcome.*
+import org.apache.commons.io.FileUtils
+import com.google.android.gms.maps.model.MarkerOptions
+
+import com.google.android.gms.maps.CameraUpdate
+
+import com.google.android.gms.maps.model.LatLng
+
 
 
 
@@ -30,6 +46,9 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
    private lateinit var locationRequest: LocationRequest
    private lateinit var locationCallback: LocationCallback
 
+
+    lateinit var app: MyApplication
+    val gson = Gson()
     private lateinit var mMap : GoogleMap
 
     private var latitude: Double= 0.toDouble()
@@ -76,6 +95,48 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
         super.onViewCreated(view, savedInstanceState)
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(this)
+        app = (activity?.application as MyApplication)
+        val data :AllLocations = AllLocations("AllLocations")
+        data.AllLocations.add(com.example.mylib.Location("Veterinarstvo Eisner", " (02) 420 23 62", "4.9 / 5", "Krajnceva ulica 3", "Open - CLose 1PM", 46.54350710858781, 15.617250487095083))
+        data.AllLocations.add(com.example.mylib.Location("Veterinarstvo Peklar", " (041 537 439", "4.9 / 5", "Slovenja vas 2", "Open - CLose 3PM", 46.444032351787286, 15.803253983689821))
+        data.AllLocations.add(com.example.mylib.Location("Veterinarski center Pika", " 0591 78478", "4.5 / 5", "Smetanova ulica 78", "Open - CLose 7PM", 46.561864445471386, 15.630080668160613))
+        data.AllLocations.add(com.example.mylib.Location("Veterinarski center Studenci", " (02) 421 66 00", "4.9 / 5", "Kalohova ulica 22", "Open - CLose 2PM", 46.55491650926884, 15.617574504844985))
+
+        data.AllLocations.add(com.example.mylib.Location("Klinika za male živali", " (02) 480 12 16", "4.7 / 5", "Krajnceva ulica 3", "Open - CLose 1PM", 46.55346221694055, 15.665705414696681))
+        //RecylcerView
+
+
+        rvLocation.layoutManager =
+            LinearLayoutManager(this.context, LinearLayoutManager.VERTICAL, false)
+        rvLocation.adapter = LocationRVAdapter(data/*, petsList*/, object : LocationRVAdapter.MyOnClick {
+                override fun onClick(p0: View?, position: Int) {
+
+
+                    val callback = OnMapReadyCallback { googleMap ->
+                        /**
+                         * Manipulates the map once available.
+                         * This callback is triggered when the map is ready to be used.
+                         * This is where we can add markers or lines, add listeners or move the camera.
+                         * In this case, we just add a marker near Sydney, Australia.
+                         * If Google Play services is not installed on the device, the user will be prompted to
+                         * install it inside the SupportMapFragment. This method will only be triggered once the
+                         * user has installed Google Play services and returned to the app.
+                         */
+                        googleMap.clear()
+                        val sydney = LatLng(data.AllLocations[position].latitude, data.AllLocations[position].longitude)
+                        googleMap.addMarker(MarkerOptions().position(sydney).title(data.AllLocations[position].name))
+                        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+                    }
+                    mapFragment?.getMapAsync(callback)
+                   //mMap.clear()
+                    //moveMap(mapFragment,app.dataLocation.AllLocations[position].latitude.toDouble(), app.dataLocation.AllLocations[position].longitude )
+
+                    //val action = WelcomeFragmentDirections.actionWelcomeFragmentToPetProfileFragment(position)
+
+
+
+                }
+            })
 
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
@@ -198,7 +259,12 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
         super.onStop()
     }
 
-    override fun onMapReady(googleMap: GoogleMap) {
+
+
+
+
+
+    override fun onMapReady(googleMap: GoogleMap, ) {
         mMap = googleMap!!
         // Add a marker in Sydney and move the camera
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
