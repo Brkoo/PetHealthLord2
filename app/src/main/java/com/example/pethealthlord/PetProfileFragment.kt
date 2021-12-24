@@ -9,11 +9,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import androidx.fragment.app.FragmentTransaction
+import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+
 import androidx.navigation.fragment.navArgs
+import androidx.navigation.ui.setupWithNavController
+
+import androidx.recyclerview.widget.RecyclerView
 import com.example.mylib.AllPets
 import com.example.mylib.Pet
+import com.google.android.material.snackbar.Snackbar
 import com.google.gson.Gson
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_pet_profile.*
 import org.apache.commons.io.FileUtils
 
@@ -29,6 +37,7 @@ private const val ARG_PARAM2 = "param2"
  */
 class PetProfileFragment : Fragment(R.layout.fragment_pet_profile) {
 
+    //private lateinit var newRecyclerView: RecyclerView
     lateinit var app: MyApplication
     lateinit var pet: Pet
     val gson = Gson()
@@ -51,8 +60,21 @@ class PetProfileFragment : Fragment(R.layout.fragment_pet_profile) {
 
         weight.text = pet.Weight.toString()
 
+        DeleteFab.setOnClickListener{
+            Snackbar.make(view, "Are you sure you want to delete ${data.AllPets[position].Name} ", Snackbar.LENGTH_LONG).setAction("Yes", View.OnClickListener {
+                app.data.AllPets.removeAt(position)
+                data.AllPets.removeAt(position)
+                app.saveToFile()
+                view.findNavController().navigate(R.id.action_petProfileFragment_to_welcomeFragment)
+            }).show()
+        }
 
+        val navHostFragment = childFragmentManager.findFragmentById(R.id.fragmentContainerView2) as NavHostFragment
+        val navController = navHostFragment.navController
+        ProfileNavigation.setupWithNavController(navController)
     }
+
+
 
     private fun showEditTextDialog(position: Int) {
         tvPetName.setOnClickListener {

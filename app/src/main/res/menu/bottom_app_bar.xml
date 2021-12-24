@@ -1,26 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/SettingsItem"
-        android:icon="@drawable/ic_search_24"
-        android:title="Settings"
-        android:contentDescription="search"
+        android:id="@+id/walksFragment"
+        android:icon="@drawable/ic_walking_24"
+        android:title="Walks"
+
 
         />
 
     <item
-        android:id="@+id/DeleteItem"
-        android:icon="@drawable/ic_baseline_delete_24"
-        android:title="Delete"
-        android:contentDescription="more"
+        android:id="@+id/vaccineFragment"
+        android:icon="@drawable/ic_sirringe"
+        android:title="Vaccine"
 
-
-        />
-    <item
-        android:id="@+id/SearchItem"
-        android:title="Search"
-        android:contentDescription="more"
 
 
         />
+
+
+
+
 </menu>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_profile"
+    app:startDestination="@id/walksFragment">
+
+    <fragment
+        android:id="@+id/walksFragment"
+        android:name="com.example.pethealthlord.WalksFragment"
+        android:label="fragment_walks"
+        tools:layout="@layout/fragment_walks" >
+        <action
+            android:id="@+id/action_walksFragment_to_vaccineFragment"
+            app:destination="@id/vaccineFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/vaccineFragment"
+        android:name="com.example.pethealthlord.VaccineFragment"
+        android:label="fragment_vaccine"
+        tools:layout="@layout/fragment_vaccine" >
+        <action
+            android:id="@+id/action_vaccineFragment_to_walksFragment"
+            app:destination="@id/walksFragment" />
+    </fragment>
+</navigation>

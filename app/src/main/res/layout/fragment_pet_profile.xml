@@ -34,7 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/floatingActionButton"
+                android:id="@+id/DeleteFab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:clickable="true"
@@ -48,7 +48,7 @@
                 android:layout_height="150dp"
                 android:layout_marginEnd="50dp"
 
-                app:srcCompat="@drawable/ic_batman"
+                app:srcCompat="@drawable/pet_png"
                 android:contentDescription="@string/proofile_image_of_pet" />
         </LinearLayout>
             <TextView
@@ -193,5 +193,37 @@
 
 
     </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+
+        android:id="@+id/ProfileNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+
+        app:backgroundTint="@color/whiteBlue"
+        app:elevation="0dp"
+        app:itemIconTint="@color/navyBlue"
+        app:itemTextColor="@color/navyBlue"
+        app:labelVisibilityMode="selected"
+
+        app:layout_constraintTop_toBottomOf="@+id/profileCard"
+        app:menu="@menu/bottom_app_bar"
+        tools:layout_editor_absoluteX="15dp" />
+
+    <fragment
+        android:id="@+id/fragmentContainerView2"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="409dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        app:defaultNavHost="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ProfileNavigation"
+        app:navGraph="@navigation/nav_graph_profile" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
