@@ -60,6 +60,8 @@ class PetProfileFragment : Fragment(R.layout.fragment_pet_profile) {
 
         weight.text = pet.Weight.toString()
 
+        vaccineDose.text = pet.Age.toString()
+        
         DeleteFab.setOnClickListener{
             Snackbar.make(view, "Are you sure you want to delete ${data.AllPets[position].Name} ", Snackbar.LENGTH_LONG).setAction("Yes", View.OnClickListener {
                 app.data.AllPets.removeAt(position)

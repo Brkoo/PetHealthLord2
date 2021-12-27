@@ -113,13 +113,13 @@ class AddElementsFragment : Fragment(R.layout.fragment_add_elements) {
 
         rvSize.adapter = SizeRVAdapter(sizeList)
 
-        editTextAge.text
+       // editTextAge.text
 
         AddPetButton.setOnClickListener {
             app.data.AllPets.add(
                 Pet(
                     editTextTextPersonName.text.toString(),
-                    editTextAge.text.toString().toInt(),
+                    getAge(myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH)),
                     editTextWeight.text.toString().toInt()
                 )
             )

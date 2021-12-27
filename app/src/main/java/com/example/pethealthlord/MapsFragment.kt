@@ -107,7 +107,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
 
 
         rvLocation.layoutManager =
-            LinearLayoutManager(this.context, LinearLayoutManager.VERTICAL, false)
+            LinearLayoutManager(this.context, LinearLayoutManager.HORIZONTAL, false)
         rvLocation.adapter = LocationRVAdapter(data/*, petsList*/, object : LocationRVAdapter.MyOnClick {
                 override fun onClick(p0: View?, position: Int) {
 
