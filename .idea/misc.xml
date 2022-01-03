@@ -35,10 +35,10 @@
         <entry key="..\:/FERI2/UPORA/PetHealthLord/app/src/main/res/layout/fragment_first.xml" value="0.33" />
         <entry key="..\:/FERI2/UPORA/PetHealthLord/app/src/main/res/layout/fragment_maps.xml" value="0.33" />
         <entry key="..\:/FERI2/UPORA/PetHealthLord/app/src/main/res/layout/fragment_maps2.xml" value="0.42239583333333336" />
-        <entry key="..\:/FERI2/UPORA/PetHealthLord/app/src/main/res/layout/fragment_pet_profile.xml" value="0.41412213740458015" />
+        <entry key="..\:/FERI2/UPORA/PetHealthLord/app/src/main/res/layout/fragment_pet_profile.xml" value="0.25" />
         <entry key="..\:/FERI2/UPORA/PetHealthLord/app/src/main/res/layout/fragment_second.xml" value="0.33" />
         <entry key="..\:/FERI2/UPORA/PetHealthLord/app/src/main/res/layout/fragment_vaccine.xml" value="0.11388888888888889" />
-        <entry key="..\:/FERI2/UPORA/PetHealthLord/app/src/main/res/layout/fragment_walks.xml" value="0.5" />
+        <entry key="..\:/FERI2/UPORA/PetHealthLord/app/src/main/res/layout/fragment_walks.xml" value="0.22" />
         <entry key="..\:/FERI2/UPORA/PetHealthLord/app/src/main/res/layout/fragment_wallks_bottom_sheet.xml" value="1.0" />
         <entry key="..\:/FERI2/UPORA/PetHealthLord/app/src/main/res/layout/fragment_welcome.xml" value="0.33" />
         <entry key="..\:/FERI2/UPORA/PetHealthLord/app/src/main/res/layout/item_breed_layout.xml" value="0.415625" />
@@ -47,6 +47,7 @@
         <entry key="..\:/FERI2/UPORA/PetHealthLord/app/src/main/res/layout/pet_profile_fragment.xml" value="0.25" />
         <entry key="..\:/FERI2/UPORA/PetHealthLord/app/src/main/res/layout/profile_picture_layout.xml" value="0.26773049645390073" />
         <entry key="..\:/FERI2/UPORA/PetHealthLord/app/src/main/res/layout/profile_picure_layout.xml" value="0.32065217391304346" />
+        <entry key="..\:/FERI2/UPORA/PetHealthLord/app/src/main/res/layout/walks_layout_rv.xml" value="0.5" />
         <entry key="..\:/FERI2/UPORA/PetHealthLord/app/src/main/res/menu/bottom_app_bar.xml" value="0.5364583333333334" />
         <entry key="..\:/FERI2/UPORA/PetHealthLord/app/src/main/res/menu/bottom_menu.xml" value="0.5505208333333333" />
         <entry key="..\:/FERI2/UPORA/PetHealthLord/app/src/main/res/menu/menu_main.xml" value="0.5364583333333334" />

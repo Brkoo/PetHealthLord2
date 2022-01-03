@@ -21,4 +21,14 @@
         android:src="@drawable/ic_add_24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvWalks"
+        android:layout_width="match_parent"
+        android:layout_height="672dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/walks_layout_rv" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

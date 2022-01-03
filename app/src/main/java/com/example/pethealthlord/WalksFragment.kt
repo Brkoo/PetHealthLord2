@@ -10,6 +10,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat.getSystemService
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.*
@@ -55,9 +57,34 @@ class WalksFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val bottomSheetFragment = BottomSheetFragment()
+
+        val HourOfTheDay = arguments?.getString("hourOfTheDay")
+        val Minutes = arguments?.getString("Minutes")
+       if(HourOfTheDay != null && Minutes != null) {
+
+           var data: String = "Time for a walk at:  $HourOfTheDay:$Minutes "
+           rvWalks.layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.VERTICAL, false)
+           rvWalks.adapter = WalksRvAdapter(data, object : WalksRvAdapter.MyOnClick {
+               override fun onClick(p0: View?, position: Int) {
+
+               }
+
+           })
+
+
+
+       }
+
+       /* val bottomSheetFragment = BottomSheetFragment()
         AddWalk.setOnClickListener{
             bottomSheetFragment.show(childFragmentManager, "BottomSheetDialog")
+
+
+            }
+
+                */
+        AddWalk.setOnClickListener {
+            findNavController().navigate(R.id.action_walksFragment_to_bottomSheetFragment)
         }
 
 

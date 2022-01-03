@@ -25,6 +25,7 @@ import com.example.mylib.PetSize
 import kotlinx.android.synthetic.main.item_breed_layout.*
 import java.text.SimpleDateFormat
 import java.time.LocalDate
+import java.time.LocalDate.*
 import java.time.Period
 import java.util.*
 import kotlin.collections.ArrayList
@@ -62,10 +63,10 @@ class AddElementsFragment : Fragment(R.layout.fragment_add_elements) {
 
 
 
-       /* exit.setOnClickListener() {
-            view.findNavController().navigate(R.id.action_addElementsFragment_to_welcomeFragment)
-        }
-        */
+        /* exit.setOnClickListener() {
+             view.findNavController().navigate(R.id.action_addElementsFragment_to_welcomeFragment)
+         }
+         */
 
 
 
@@ -89,11 +90,8 @@ class AddElementsFragment : Fragment(R.layout.fragment_add_elements) {
                     myCalendar.get(Calendar.DAY_OF_MONTH)
                 ).show()
             }
-            val age: Int = getAge(
-                myCalendar.get(Calendar.YEAR),
-                myCalendar.get(Calendar.MONTH),
-                myCalendar.get(Calendar.DAY_OF_MONTH)
-            )
+            val age: Int = calculateAge(myCalendar.timeInMillis)
+
         }
 
         rvSize.layoutManager =
@@ -113,13 +111,13 @@ class AddElementsFragment : Fragment(R.layout.fragment_add_elements) {
 
         rvSize.adapter = SizeRVAdapter(sizeList)
 
-       // editTextAge.text
+        // editTextAge.text
 
         AddPetButton.setOnClickListener {
             app.data.AllPets.add(
                 Pet(
                     editTextTextPersonName.text.toString(),
-                    getAge(myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH)),
+                    calculateAge(myCalendar.timeInMillis),
                     editTextWeight.text.toString().toInt()
                 )
             )
@@ -140,10 +138,20 @@ class AddElementsFragment : Fragment(R.layout.fragment_add_elements) {
     @RequiresApi(Build.VERSION_CODES.O)
     fun getAge(year: Int, month: Int, dayOfMonth: Int): Int {
         return Period.between(
-            LocalDate.of(year, month, dayOfMonth),
-            LocalDate.now()
+            of(year, month, dayOfMonth),
+            now()
         ).years
     }
 
-}
+    fun calculateAge(date: Long): Int {
+        val dob = Calendar.getInstance()
+        dob.timeInMillis = date
+        val today = Calendar.getInstance()
+        var age = today[Calendar.YEAR] - dob[Calendar.YEAR]
+        if (today[Calendar.DAY_OF_MONTH] < dob[Calendar.DAY_OF_MONTH]) {
+            age--
+        }
+        return age
+    }
 
+}

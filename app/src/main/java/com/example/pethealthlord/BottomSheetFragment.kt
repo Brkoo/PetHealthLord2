@@ -14,7 +14,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat.getSystemService
+import androidx.core.os.bundleOf
 import androidx.core.view.get
+import androidx.navigation.fragment.findNavController
 import com.example.pethealthlord.BottomSheetFragment.Companion.CHANNEL_ID
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.main.fragment_bottomsheet_walks.*
@@ -84,6 +86,17 @@ lateinit var pendingIntent: PendingIntent
             setAlarm()
 
             Toast.makeText(requireContext(), "Alarm set for $hour - $min - $pmAmp",Toast.LENGTH_LONG).show()
+
+
+
+            val HourOfTheDay = calendar[Calendar.HOUR_OF_DAY].toString()
+
+            val bundle = Bundle()
+
+            bundle.putString("hourOfTheDay", HourOfTheDay)
+            bundle.putString("Minutes", calendar[Calendar.MINUTE].toString())
+            findNavController().navigate(R.id.action_bottomSheetFragment_to_walksFragment, bundle)
+
         }
 
     }
