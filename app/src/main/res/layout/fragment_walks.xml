@@ -13,12 +13,12 @@
         android:id="@+id/AddWalk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        app:fabSize="mini"
-        app:backgroundTint="@color/navyBlue"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
         android:clickable="true"
         android:src="@drawable/ic_add_24dp"
+        app:backgroundTint="@color/navyBlue"
+        app:fabSize="mini"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
